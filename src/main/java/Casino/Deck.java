@@ -31,7 +31,7 @@ public class Deck {
 
                 {
 
-                    cards.add(new Card(a, b));
+               //     cards.add(new Card(a, b));
 
                 }
 
