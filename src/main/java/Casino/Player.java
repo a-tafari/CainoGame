@@ -28,7 +28,14 @@ public class Player {
         this.playerName = playerName;
     }
 
-
+    public double addToBalance(double number){
+        balance += number;
+        return balance;
+    }
+    public double subtractFromBalance(double number){
+        balance -= number;
+        return balance;
+    }
 
 
 }

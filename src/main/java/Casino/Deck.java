@@ -1,6 +1,7 @@
 package Casino;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -9,62 +10,43 @@ import java.util.Random;
 public class Deck {
 
 
-        private ArrayList<Card> cards;
+    ArrayList<Card> deck = new ArrayList<Card>();
+
+        private String[] rank = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+        private String[] suit = {"Club", "Spade", "Diamond", "Heart"};
 
 
-        public Deck() {
-
-            cards = new ArrayList<Card>();
-
-            int index_1, index_2;
-
-            Random generator = new Random();
-
-            Card temp;
-
-
-            for (int a = 1; a <= 4; a++)
-
-            {
-
-                for (int b = 1; b <= 13; b++)
-
-                {
-
-               //     cards.add(new Card(a, b));
-
+        public Deck(){
+            for (int i = 0; i<suit.length; i++) {
+                for(int j=0; j<rank.length; j++){
+                    this.deck.add(new Card(suit[i],rank[j]));
                 }
-
             }
-
-
-            int size;
-
-
-
-            for (int i = 0; i < 100; i++) {
-
-                index_1 = generator.nextInt(cards.size() - 1);
-
-                index_2 = generator.nextInt(cards.size() - 1);
-
-                temp = cards.get(index_2);
-
-                cards.set(index_2, cards.get(index_1));
-
-                cards.set(index_1, temp);
-            }
+            //shuffle the deck when its created
+            Collections.shuffle(this.deck);
 
         }
 
+        public ArrayList<Card> getDeck(){
+            return deck;
+        }
+        
 
-        public Card drawFromDeck() {
+        public Card drawFromDeck() throws EmptyDeckException {
+            Random generator = new Random();
+            if(deck.size()>0) {
+                int index = generator.nextInt(deck.size());
+                return deck.remove(index);
+            }
+            else
+                throw new EmptyDeckException();
+        }
+        public void dealCards(){
 
-            return cards.remove(0);
         }
 
         public int getTotalCards() {
-            return cards.size();
+            return deck.size();
         }
 
 }

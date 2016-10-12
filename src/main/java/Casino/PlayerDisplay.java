@@ -1,5 +1,7 @@
 package Casino;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 /**
  * Created by abijah on 10/11/16.
  */
@@ -39,5 +41,23 @@ public class PlayerDisplay {
     }
     public static void playerHand(){
 
+    }
+    public static void blackJackDisplay(){
+        System.out.println("██████╗ ██╗      █████╗  ██████╗██╗  ██╗         ██╗ █████╗  ██████╗██╗  ██╗    \n"+
+                "██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝         ██║██╔══██╗██╔════╝██║ ██╔╝   \n"+
+                "██████╔╝██║     ███████║██║     █████╔╝          ██║███████║██║     █████╔╝    \n"+
+                "██╔══██╗██║     ██╔══██║██║     ██╔═██╗     ██   ██║██╔══██║██║     ██╔═██╗    \n" +
+                "██████╔╝███████╗██║  ██║╚██████╗██║  ██╗    ╚█████╔╝██║  ██║╚██████╗██║  ██╗   \n" +
+                "╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝     ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝");
+    }
+    public static void blackJackChoice(){
+        System.out.println("============================");
+        System.out.println("| CHOOSE :                 |");
+        System.out.println("|        1. HIT ME         |");
+        System.out.println("|        2. STAY           |");
+        System.out.println("============================");
+    }
+    public static void displayMessage(String msg){
+        System.out.println(msg);
     }
 }
