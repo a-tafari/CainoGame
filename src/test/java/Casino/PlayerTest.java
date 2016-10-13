@@ -21,29 +21,41 @@ public class PlayerTest {
     @Test
     public void getSetBalanceTest(){
         player.setBalance(balance);
+        // Arrange
         double actual = 10.00;
+        //Act
         double expected = player.getBalance();
+        //Assert
         Assert.assertEquals("Should return 10.00", actual, expected, DELTA);
     }
     @Test
     public void getPlayerNameTest(){
         player.setPlayerName(name);
+        //Arrange
         String actual= "ABIJAH";
+        // Act
         String expected= player.getPlayerName();
+        // Assert
         Assert.assertEquals("Should return ABIJAH", actual, expected);
     }
     @Test
     public void addToBalanceAccount(){
         player.setBalance(balance);
+        //Arrange
         double actual = 20.50;
+        // Act
         double expected = player.addToBalance(10.50);
+        // Assert
         Assert.assertEquals("Should be 20.50", actual, expected,DELTA);
     }
     @Test
     public void subtractFromBalanceAccount(){
         player.setBalance(balance);
+        // Arrange
         double actual = 5.50;
+        // Act
         double expected = player.subtractFromBalance(4.50);
+        // Assert
         Assert.assertEquals("Should be 4.50", actual, expected,DELTA);
     }
 }

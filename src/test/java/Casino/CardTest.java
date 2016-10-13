@@ -20,24 +20,33 @@ public class CardTest {
     }
     @Test
     public void getSuitTest(){
-
+        // Arrange
         String actual= "Club";
+        // Act
         String expected= card.getSuit();
+        // Assert
         Assert.assertEquals("Should be a Club", actual, expected);
     }
     @Test
-    public void setRankTest(){
-
+    public void getRankTest(){
+        // Arrange
         String actual= "A";
+        // Act
         String expected= card.getRank();
+        // Assert
         Assert.assertEquals("Should be a Club", actual, expected);
     }
     @Test
     public void toStringTest(){
+        // Arrange
         String actual="\n"+rank+"bof "+ suit;
+        // Act
         String expected= card.toString();
+        // Assert
         Assert.assertEquals("Should be A of Clubs", actual, expected);
     }
     @Test
-    public void drawFromDeckTest
+    public void drawFromDeckTest(){
+
+    }
 }
