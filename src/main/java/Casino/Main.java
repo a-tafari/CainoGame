@@ -6,6 +6,6 @@ package Casino;
 public class Main {
     public static void main(String[] args) {
         CasinoEngine casinoEngine = new CasinoEngine();
-        PlayerDisplay.displayMessage("hey");
+        casinoEngine.startCasinoEngine();
     }
 }

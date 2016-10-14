@@ -15,7 +15,7 @@ public class PlayerTest {
     @Before
 
     public void setUp(){
-        player =  new Player();
+        player =  new Player(name, balance);
 
     }
     @Test

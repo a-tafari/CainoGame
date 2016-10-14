@@ -5,17 +5,18 @@ import org.junit.Test;
 /**
  * Created by abijah on 10/11/16.
  */
-public class DeckTest {
+public class DeckTest extends Card {
     Deck deck;
     String[] rank = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
     String[] suit = {"Club", "Spade", "Diamond", "Heart"};
     Card card;
+    Deck.Hand hand;
     @Before
 
     public void setUp(){
         deck =  new Deck();
         card = new Card();
-
+        hand = deck.new Hand();
     }
     @Test
     public void getTotalCardsTest(){
@@ -41,7 +42,7 @@ public class DeckTest {
         Assert.assertEquals("Should return 51", actual, expected);
     }
     @Test
-    public  void drawFromDeckRandomTest(){
+    public  void drawFromDeckTest(){
         //Arrange
          Card value1 = deck.drawFromDeck();
         //Act
@@ -51,9 +52,17 @@ public class DeckTest {
 
     }
     @Test
+    public void testForRandomness(){
+        Card card =deck.drawFromDeck();
+        String expected="\n 2 of Club";
+        String actual=card.toString();
+        Assert.assertNotEquals("Should not be equal to one another", expected, actual);
+
+    }
+    @Test
     public void dealCardsTest(){
         int actual= 4;
-        int expected= deck.dealCards(4).size();
+        int expected= hand.dealCards(4).size();
         Assert.assertEquals("the size of the dealt cards should be", actual, expected);
 
     }
