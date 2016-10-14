@@ -4,7 +4,7 @@ package Casino;
  * Created by abijah on 10/13/16.
  */
 
-public class MenuTerminal {
+public  class MenuTerminal {
     CasinoEngine casinoEngine;
     Player player;
     Slots slots = new Slots();

@@ -2,6 +2,7 @@ package Casino;
 
 import java.util.Random;
 
+import static Casino.Player.casinoEngine;
 import static javax.sound.midi.ShortMessage.START;
 
 /**
@@ -86,17 +87,15 @@ public class Slots implements GameInterface {
 
 
         PlayerDisplay.displayMessage("Yeah, quit while you're ahead! You've scored an extra $" + (balance - START) + ". Come again soon!");
-
         PlayerDisplay.displayMessage("Thanks for playing! Come again soon!");
-
-
-
         PlayerDisplay.displayMessage(Double.toString(balance));
+
+        casinoEngine.displayGameMenu();
     }
 
 
 
 //    public void endGame(){
-//      casinoEngine.displayGameMenu();
+//
 //    }
 }
