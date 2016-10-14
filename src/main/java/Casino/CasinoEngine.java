@@ -6,7 +6,8 @@ package Casino;
 public class CasinoEngine {
     //private Player player = new Player();
     private MenuTerminal menuTerminal = new MenuTerminal();
-
+    //private BlackJack blackJack = new BlackJack();
+    private Slots slots =new Slots();
     public CasinoEngine(/*PlayerDisplay display, Userinput userInput*/) {
 
 
@@ -34,6 +35,17 @@ public class CasinoEngine {
         PlayerDisplay.gameMenuDisplay();
         int userInput = UserInput.getANumber();
         menuTerminal.chooseGameToPlay(userInput);
+    }
+//    public void playBlackJack(){
+//
+//        PlayerDisplay.displayMessage("Enter Bet");
+//        if(blackJack.runGame());
+//
+//
+//    }
+    public  void playSlots(){
+       // PlayerDisplay.playSlotsDisplay();
+        //slots.runGame();
     }
 
 

@@ -5,11 +5,9 @@ package Casino;
  */
 public interface GameInterface {
 
-    public void runGame();
+   // public void runGame();
 
-    public void decreasePlayerBalance(double number);
+    //public void adjustPlayerBalance(double number);
 
-    public void increasePlayerBalance(double number);
-
-    public void endGame();
+    //public void endGame();
 }

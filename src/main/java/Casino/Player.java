@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Created by abijah on 10/11/16.
  */
 public class Player {
+    static CasinoEngine casinoEngine = new CasinoEngine();
     private double balance = 0;
     private String playerName;
     //private Card playersCards;
@@ -43,6 +44,27 @@ public class Player {
     public double subtractFromBalance(double number){
         balance -= number;
         return balance;
+    }
+    public static void checkForPlayerInListAndCreatePlayer(){
+        if(Player.playerList.isEmpty()) {
+            PlayerDisplay.displayMessage("ENTER YOUR NAME: ");
+            String name = UserInput.getName();
+            PlayerDisplay.displayMessage("ENTER AMOUNT: ");
+            double amount = UserInput.getAccountAmount();
+            if (amount >= 2500) {
+                PlayerDisplay.displayMessage("The amount you've entered is to high. \n Please enter an amount under $2500");
+                casinoEngine.returnToMain();
+            }
+            else {
+                Player player = new Player(name, amount);
+                Player.playerList.add(player);
+                casinoEngine.displayGameMenu();
+            }
+        }
+        else {
+            PlayerDisplay.displayMessage("AN ACCOUNT FOR THIS USER ALREADY EXIST");
+            casinoEngine.returnToMain();
+        }
     }
 //    public void createPlayer (String name,double number){
 //

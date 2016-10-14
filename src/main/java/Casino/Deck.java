@@ -56,7 +56,7 @@ public class Deck extends Card {
     public class Hand extends Card {
         ArrayList<Card> userHand = new ArrayList<Card>();
         ArrayList<Card> dealerHand = new ArrayList<Card>();
-
+        ArrayList<String> singleRank = new ArrayList<>();
         public void addToUserHand() {
             userHand.add(drawFromDeck());
         }
@@ -65,26 +65,17 @@ public class Deck extends Card {
             dealerHand.add(drawFromDeck());
         }
 
-        //        public ArrayList<Card> dealCards(ArrayList<Card> , int number){// not sure if this should be method that calls drawFrom Deck within the game
-//
-//                for (int i= 0 ; i < number; i++){
-//                    Card userCards= drawFromDeck();
-//                    name.add(userCards);
-//
-//                }
-//                return newHand;
-//            }
         public void showHand() {
             for (Card cards : userHand)
                 PlayerDisplay.displayMessage(cards.toString());
         }
 
-        public String showUserRankValue() {
-            String rank = "";
+        public void takeUserHandTurnToRank(ArrayList<Card> card) {
+
             for (Card cards : userHand) {
-                rank = cards.getRank();
+                String ranksInHand= cards.getRank();
+                singleRank.add(ranksInHand);
             }
-            return rank;
         }
 
     }

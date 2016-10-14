@@ -8,6 +8,11 @@ public class Crazy8 implements GameInterface{
 
     }
 
+//    @Override
+//    public void adjustPlayerBalance(double number) {
+//
+//    }
+
     public void decreasePlayerBalance(double number) {
 
     }

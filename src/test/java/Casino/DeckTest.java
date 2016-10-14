@@ -56,16 +56,36 @@ public class DeckTest extends Card {
         Card card =deck.drawFromDeck();
         String expected="\n 2 of Club";
         String actual=card.toString();
-        Assert.assertNotEquals("Should not be equal to one another", expected, actual);
+        Assert.assertNotEquals("Should not be equal to one another",actual, expected);
+
+    }
+
+    @Test
+    public void addToUserHandTest(){
+        hand.addToUserHand();
+        int actual = 1;
+        int expected = hand.userHand.size();
+        Assert.assertEquals("Should not be equal to 1", actual, expected);
 
     }
     @Test
-    public void dealCardsTest(){
-        int actual= 4;
-        int expected= hand.dealCards(4).size();
-        Assert.assertEquals("the size of the dealt cards should be", actual, expected);
+    public void addToDealerHandTest(){
+        hand.addToDealerHand();
+        int actual = 1;
+        int expected = hand.dealerHand.size();
+        Assert.assertEquals("Should not be equal to 1", actual, expected);
 
     }
+//    @Test
+//    public void takeUserHandTurnToRankTest(){
+//        hand.addToUserHand();
+//        hand.addToUserHand();
+//        hand.takeUserHandTurnToRank();
+//        int actual = 2;
+//        int expected = hand.singleRank.size();
+//        Assert.assertEquals("Should not be equal to 1", actual, expected);
+//
+//    }
 
 
 
